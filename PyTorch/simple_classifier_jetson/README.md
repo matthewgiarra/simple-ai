@@ -58,8 +58,7 @@ For example, if the device is named `lowswap-tx2`, then navigate your browser to
 
 If prompted for a password, enter `nvidia`
 
-5. In the browser window, open the file `simple_classifier_jetson.ipynb` to view and run the code.
-
+5. In the browser window, open the file `simple_classifier_jetson.ipynb` to view and run the code. If you see a message that says `Persian cat`, it worked!
 
 # Troubleshooting
 If you can't upgrade docker or pull the docker image, try updating the system clock
