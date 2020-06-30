@@ -8,6 +8,9 @@ We provide two files containing the same source code:
 
 Depending on your workflow, you may find one or the other easier to use. We provide instructions for both methods below.
 
+# Assumptions
+These instructions assume that you are operating on the Jetson, either directly or via `ssh`. 
+
 # Prerequisites 
 Upgrade docker
 ```bash
@@ -20,12 +23,14 @@ sudo apt-get --only-upgrade install docker.io
 git clone git@gitlab.jhuapl.edu:giarrmn1/simpleai.git
 ```
 
+If the device doesn't have access to the repository, you'll need to clone it on a machine that does have access and then copy it to the Jetson (e.g., using `scp`).
+
 2. Build the docker image
 ```bash
 cd simpleai/PyTorch/simple_classifier_jetson
 docker build --rm -t simple_classifier_jetson .
 ```
-3. Start a docker container using the image we just build
+3. Launch a docker container using the image we just built
 ```bash
 source dockerlaunch.sh
 ```
@@ -44,14 +49,14 @@ python3 simple_classifier_jetson.py
 
 If you see a message that says `Persian cat`, it worked!
 
-# Variation: using the Python notebook
+# Variation: using the Jupyter notebook
 The instructions for using the Jupyter notebook are the same as above up to step 3. 
 
 4. Once you've launched the docker container, navigate a browser window to the following address:
 `http://<hostname>:<port number>`
 
-- `<hostname>` is the name of the device you've SSH'd into (you can get this by typing `hostname` in the terminal window of the device you're SSH'd into)
-- `<port number>` is the number following the word `localhost` in the prompt from step 3 (default <port number> is 8888)
+- Replace `<hostname>` with `localhost` if your browser is running on the jetson, or with the name of the device if you've SSH'd into it (you can get this by typing `hostname` in the terminal window of the device you're SSH'd into)
+- Replace `<port number>` is the number following the word `localhost` in the prompt from step 3 (default <port number> is 8888)
 
 For example, if the device is named `lowswap-tx2`, then navigate your browser to:
 `http://lowswap-tx2:8888`
