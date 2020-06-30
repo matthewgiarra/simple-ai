@@ -2,7 +2,7 @@
 
 # Overview
 This folder contains code to demonstrate using a simple image classification neural network ("Alexnet") to classify an image of a cat.
-We provide two versions of the same source file:
+We provide two files containing the same source code:
 - `simple_classifier_jetson.py`: Python source code (quickest way to get something running)
 - `simple_classifier_jetson.ipynb`: Jupyter notebook containing the same code as `simple_classifier_jetson.py` (more flexible for modifying, experimenting, etc.)
 
