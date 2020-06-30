@@ -14,12 +14,6 @@
 
 FROM nvcr.io/nvidia/l4t-ml:r32.4.2-py3
 
-RUN apt-get update
-RUN apt-get install -y python3-opencv
-
-# Install Python dependencies
-RUN pip3 install --upgrade --no-cache-dir pip
-
 # Set working directory
 WORKDIR /workspace
 RUN cd /workspace
