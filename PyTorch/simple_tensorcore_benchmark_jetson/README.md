@@ -97,7 +97,7 @@ If you can't build the docker image, you may need to [change your default Docker
 
 To set nvidia as the default Docker runtime:
 
-1. Open or create the file `/etc/docker/daemon.json` to contain the following content:
+1. Create or modify the file `/etc/docker/daemon.json` to contain the following content:
 
 	```bash
 	{
