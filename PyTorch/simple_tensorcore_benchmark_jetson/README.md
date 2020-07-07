@@ -87,13 +87,13 @@ The instructions for using the Jupyter notebook are the same as above up to step
 
 # Troubleshooting
 ## Can't upgrade Docker or pull the Docker image
-If you can't upgrade docker or pull the docker image, try updating the system clock
+If you can't upgrade docker or pull the Docker image, try updating the system clock
 ```bash
 sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
 ```
 
 ## Can't build the Docker image
-If you can't build the docker image, you may need to [change your default Docker runtime](https://docs.nvidia.com/dgx/nvidia-container-runtime-upgrade/index.html#using-nv-container-runtime) to `nvidia`. This allows access to `cuda` libraries while building the docker image (I think). 
+If you can't build the Docker image, you may need to [change your default Docker runtime](https://docs.nvidia.com/dgx/nvidia-container-runtime-upgrade/index.html#using-nv-container-runtime) to `nvidia`. This allows access to `cuda` libraries while building the Docker image (I think). 
 
 To set nvidia as the default Docker runtime:
 
@@ -112,13 +112,13 @@ To set nvidia as the default Docker runtime:
 	
 	```
 
-1. Restart docker daemon
+1. Restart Docker daemon
  
 	```bash
 	sudo systemctl restart docker
 	```
  
-3. Build the docker container as usual
+3. Build the Docker container as usual
 
 	```bash
 	docker build --rm -t simple_tensorcore_benchmark_jetson . 
