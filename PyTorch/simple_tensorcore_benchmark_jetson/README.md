@@ -79,8 +79,8 @@ The instructions for using the Jupyter notebook are the same as above up to step
 	
 	- Replace `<hostname>` with `localhost` if your browser is running on the jetson, or with the name of the device if you've SSH'd into it (you can get this by typing `hostname` in the terminal window of the device you're SSH'd into)
 	- Replace `<port number>` with the number following the word `localhost` in the prompt above (default is `8888`). 
-	- For example, if the device is named `lowswap-tx2`, then navigate your browser to:
-	`http://lowswap-tx2:8888`
+	- For example, if the device is named `lowswap-xavier-dev3`, then navigate your browser to:
+	`http://lowswap-xavier-dev3:8888`
 	- If prompted for a password, enter `nvidia`
 
 5. In the browser window, open the file `simple_tensorcore_benchmark_jetson.ipynb` to view and run the code. 

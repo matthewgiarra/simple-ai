@@ -18,52 +18,59 @@ sudo apt-get --only-upgrade install docker.io
 ```
 
 # Instructions
+
 1. Clone this repository
-```bash
-git clone git@gitlab.jhuapl.edu:giarrmn1/simpleai.git
-```
 
-If the device doesn't have access to the repository, you'll need to clone it on a machine that does have access and then copy it to the Jetson (e.g., using `scp`).
-
+	```bash
+	git clone git@gitlab.jhuapl.edu:giarrmn1/simpleai.git
+	```
+	
+	If the device doesn't have access to the repository, you'll need to clone it on a machine that does have access and then copy it to the Jetson (e.g., using `scp`).
+	
 2. Build the docker image
-```bash
-cd simpleai/PyTorch/simple_classifier_jetson
-docker build --rm -t simple_classifier_jetson .
-```
-3. Launch a docker container using the image we just built
-```bash
-source dockerlaunch.sh
-```
 
-You should see a prompt that says something like:
-```bash
-allow 10 sec for JupyterLab to start @ http://localhost:8888 (password nvidia)
-JupterLab logging location:  /var/log/jupyter.log  (inside the container)
-root@lowswap-tx2:/workspace# 
-```
+	```bash
+	cd simpleai/PyTorch/simple_classifier_jetson
+	docker build --rm -t simple_classifier_jetson .
+	```
+	
+3.  Run `run.sh` to launch the container and run the contents of 
+`simple_classifier_jetson`
 
-4. From within the docker container, launch the test script
-```bash
-python3 simple_classifier_jetson.py
-```
+	```bash
+	./run.sh
+	```
 
-If you see a message that says `Persian cat`, it worked!
+	If you see a message that says `Persian cat`, it worked!
 
-# Variation: using the Jupyter notebook
-The instructions for using the Jupyter notebook are the same as above up to step 3. 
+	## Variation: using the Jupyter notebook
 
-4. Once you've launched the docker container, navigate a browser window to the following address:
+	The instructions for using the Jupyter notebook are the same as above up to step 2.
+
+4. Launch a docker container from the image we built:
+
+	 ```bash
+	 docker run -it --rm --runtime nvidia --network host -v $(pwd):/workspace simple_classifier_jetson 
+	 ```
+		
+	You should see a prompt that says something like:
+	
+	```bash
+	allow 10 sec for JupyterLab to start @ http://localhost:8888 (password nvidia)
+	JupterLab logging location:  /var/log/jupyter.log  (inside the container)
+	root@lowswap-tx2:/workspace# 
+	``` 
+
+5. Once you've launched the docker container, navigate a browser window to the following address:
 `http://<hostname>:<port number>`
 
-- Replace `<hostname>` with `localhost` if your browser is running on the jetson, or with the name of the device if you've SSH'd into it (you can get this by typing `hostname` in the terminal window of the device you're SSH'd into)
-- Replace `<port number>` is the number following the word `localhost` in the prompt from step 3 (default <port number> is 8888)
+	- Replace `<hostname>` with `localhost` if your browser is running on the jetson, or with the name of the device if you've SSH'd into it (you can get this by typing `hostname` in the terminal window of the device you're SSH'd into)
+	- `<port number>` is the number following the word `localhost` in the prompt from step 3 (default is `8888`)
+	- For example, if the device is named `lowswap-tx2`, then navigate your browser to:
+	`http://lowswap-tx2:8888`
+	- If prompted for a password, enter `nvidia`
 
-For example, if the device is named `lowswap-tx2`, then navigate your browser to:
-`http://lowswap-tx2:8888`
-
-If prompted for a password, enter `nvidia`
-
-5. In the browser window, open the file `simple_classifier_jetson.ipynb` to view and run the code. If you see a message that says `Persian cat`, it worked!
+6. In the browser window, open the file `simple_classifier_jetson.ipynb` to view and run the code. If you see a message that says `Persian cat`, it worked!
 
 # Troubleshooting
 If you can't upgrade docker or pull the docker image, try updating the system clock
