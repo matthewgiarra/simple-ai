@@ -3,13 +3,14 @@
 # Overview
 This folder contains code to demonstrate using a simple image classification neural network ("Alexnet") to classify an image of a cat.
 We provide two files containing the same source code:
-- `simple_classifier_jetson.py`: Python source code (quickest way to get something running)
-- `simple_classifier_jetson.ipynb`: Jupyter notebook containing the same code as `simple_classifier_jetson.py` (more flexible for modifying, experimenting, etc.)
+
+1. `simple_classifier_jetson.py`: Python source code (quickest way to get something running)
+2. `simple_classifier_jetson.ipynb`: Jupyter notebook containing the same code (more flexible for experimenting).
 
 Depending on your workflow, you may find one or the other easier to use. We provide instructions for both methods below.
 
 # Assumptions
-These instructions assume that you are operating on the Jetson, either directly or via `ssh`. 
+These instructions assume that you are operating on an NVIDIA Jetson with [Jetpack 4.4](https://developer.nvidia.com/embedded/jetpack) (release L4T R32.4.2) or newer, either directly or via `ssh`. 
  
 # Prerequisites 
 Upgrade docker

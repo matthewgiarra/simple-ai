@@ -7,13 +7,12 @@ We provide two files containing the same source code:
 1. `simple_tensorcore_benchmark_jetson.py`: Python source code (quickest way to get something running)
 2. `simple_tensorcore_benchmark_jetson.ipynb`: Jupyter notebook containing the same code (more flexible for experimenting).
 
-
 Depending on your workflow, you may find one or the other easier to use. We provide instructions for both methods below.
 
 The example was adapted from one provided in [an NVIDIA presentation](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9998-automatic-mixed-precision-in-pytorch.pdf).
 
 # Assumptions
-These instructions assume that you are operating on an NVIDIA Jetson with tensor cores (Volta architecture or newer, e.g., Xavier NX or AGX Xavier), either directly or via `ssh`. 
+These instructions assume that you are operating on an NVIDIA Jetson with tensor cores (Volta architecture or newer, e.g., Xavier NX or AGX Xavier), with [Jetpack 4.4](https://developer.nvidia.com/embedded/jetpack) (release L4T R32.4.2) or newer, either directly or via `ssh`. 
 
 # Prerequisites 
 Upgrade docker
