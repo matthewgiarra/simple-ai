@@ -35,9 +35,9 @@ for t in range(niter):
     loss.backward()
     optimizer.step()
 toc = time.perf_counter()
-print("Full precision: %0.2f seconds" % (toc-tic))
 results_list.append(toc-tic)
 results_names.append("Full precision")
+print("Full precision: %0.2f seconds" % (toc-tic))
 
 # Training with AMP
 N, D_in, D_out = 64, 1024, 512
