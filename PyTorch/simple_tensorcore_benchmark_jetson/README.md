@@ -10,6 +10,8 @@ We provide two files containing the same source code:
 
 Depending on your workflow, you may find one or the other easier to use. We provide instructions for both methods below.
 
+The example was adapted from one provided in [an NVIDIA presentation](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9998-automatic-mixed-precision-in-pytorch.pdf).
+
 # Assumptions
 These instructions assume that you are operating on the Jetson, either directly or via `ssh`. 
 
