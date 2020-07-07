@@ -1,4 +1,4 @@
-# Simple Image Classifier (Alexnet) on Jetson
+# Simple Tensor Core Benchmark using NVIDIA `apex`
 
 # Overview
 This folder contains code to demonstrate running a simple neural network using tensor cores.
