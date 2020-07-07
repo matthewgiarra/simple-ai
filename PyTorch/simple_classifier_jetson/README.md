@@ -10,7 +10,7 @@ Depending on your workflow, you may find one or the other easier to use. We prov
 
 # Assumptions
 These instructions assume that you are operating on the Jetson, either directly or via `ssh`. 
-
+ 
 # Prerequisites 
 Upgrade docker
 ```bash
