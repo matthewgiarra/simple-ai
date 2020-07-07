@@ -93,7 +93,7 @@ sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -
 ```
 
 ## Can't build the Docker image
-If you can't build the docker image, you may need to [change your default Docker runtime](https://docs.nvidia.com/dgx/nvidia-container-runtime-upgrade/index.html#using-nv-container-runtime) to `nvidia`. This allows access to `cuda` libraries while building the docker container (I think). 
+If you can't build the docker image, you may need to [change your default Docker runtime](https://docs.nvidia.com/dgx/nvidia-container-runtime-upgrade/index.html#using-nv-container-runtime) to `nvidia`. This allows access to `cuda` libraries while building the docker image (I think). 
 
 To set nvidia as the default Docker runtime:
 
