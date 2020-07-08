@@ -96,7 +96,7 @@ The instructions for using the Jupyter notebook are the same as above up to step
 7. In the browser window, open the file `simple_tensorcore_benchmark.ipynb` to view and run the code. 
 
 # Expected Performance
-## Virtual machine with RTX8000 GPU
+## Virtual machine with NVIDIA RTX8000 GPU
 
 | Precision| Execution time (sec) | Speed-up |
 |:----------:|:----------------------:|:----------:|
