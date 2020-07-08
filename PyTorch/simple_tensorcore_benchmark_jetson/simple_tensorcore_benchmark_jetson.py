@@ -39,7 +39,7 @@ for t in range(niter):
 toc = time.perf_counter()
 results_list.append(toc-tic)
 results_names.append("Float32")
-print("Full precision: %0.2f seconds" % (toc-tic))
+print("Float32: %0.2f seconds" % (toc-tic))
 
 # Training with AMP
 x = torch.randn(N, D_in, device="cuda")
