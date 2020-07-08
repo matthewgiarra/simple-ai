@@ -35,7 +35,7 @@ If the device doesn't have access to the repository, you'll need to clone it on 
 	cd simpleai/PyTorch/simple_tensorcore_benchmark_jetson
 	docker build --rm -t simple_tensorcore_benchmark_jetson .
 	```
-	<I> Note: this might take a while, since we're building </I>`Apex` <I>from source.</I>
+	<I> Note: Dockerfile defaults to python-only </I> `apex` <I> build. Follow instructions in the Dockerfile to perform the full </I>`apex` <I>build.</I>
 	
 3. Run `run.sh` to launch the container and run the contents of 
 `simple_tensorcore_benchmark_jetson.py`
