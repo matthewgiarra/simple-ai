@@ -110,8 +110,8 @@ If you can't upgrade docker or pull the Docker image, try updating the system cl
 sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
 ```
 
-## Can't build the Docker image
-If you can't build the Docker image, you may need to [change your default Docker runtime](https://docs.nvidia.com/dgx/nvidia-container-runtime-upgrade/index.html#using-nv-container-runtime) to `nvidia`. This allows access to `cuda` libraries while building the Docker image (I think). 
+## Can't build the Docker image with full `apex` build
+Building the Docker image with the [full apex build](https://github.com/NVIDIA/apex#quick-start) (versus the Python-only build) appears to require access to Cuda libraries at build-time. If the build fails, you may need to [change your default Docker runtime](https://docs.nvidia.com/dgx/nvidia-container-runtime-upgrade/index.html#using-nv-container-runtime) to `nvidia`. This allows access to `cuda` libraries while building the Docker image (I think). 
 
 To set nvidia as the default Docker runtime:
 
