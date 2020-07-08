@@ -26,7 +26,7 @@ for t in range(10):
     loss.backward()
     optimizer.step()
 
-print("Running full precision...")
+print("Running full precision (Float32)...")
 tic = time.perf_counter()
 for t in range(niter):
     y_pred = model(x)
@@ -36,8 +36,8 @@ for t in range(niter):
     optimizer.step()
 toc = time.perf_counter()
 results_list.append(toc-tic)
-results_names.append("Full precision")
-print("Full precision: %0.2f seconds" % (toc-tic))
+results_names.append("Float32")
+print("Float32: %0.2f seconds" % (toc-tic))
 
 # Training with AMP
 x = torch.randn(N, D_in, device="cuda")
