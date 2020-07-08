@@ -100,7 +100,7 @@ The instructions for using the Jupyter notebook are the same as above up to step
 
 | Precision| Execution time (sec) | Speed-up |
 |:----------:|:----------------------:|:----------:|
-|   Full precision |        12.65        |   1.00   |
+|   float32 |        12.65        |   1.00   |
 |   AMP O0 |        12.79        |   0.99   |
 |   AMP O1 |        4.09        |   3.09   |
 |   AMP O2 |        3.55        |   3.56   |
