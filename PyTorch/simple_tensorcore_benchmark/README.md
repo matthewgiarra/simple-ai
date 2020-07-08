@@ -47,7 +47,7 @@ sudo apt-get --only-upgrade install docker.io
 	```bash
 	Results summary (500 iterations)
 	===============
-	Full precision: 12.57 seconds
+	Float32: 12.57 seconds
 	AMP O0: 12.78 seconds
 	AMP O1: 4.21 seconds
 	AMP O2: 3.65 seconds
