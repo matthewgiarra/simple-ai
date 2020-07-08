@@ -5,14 +5,16 @@ import apex.amp as amp
 import time # for timing execution
 
 # Iterations per test
-niter = 500
+niter = 100
+
+# Data sizes
+N, D_in, D_out = 1024, 8192, 2048
 
 # Results vectors
 results_list = []
 results_names = []
 
 # Full precision (float32) training
-N, D_in, D_out = 64, 1024, 512
 x = torch.randn(N, D_in, device="cuda")
 y = torch.randn(N, D_out, device="cuda")
 model = torch.nn.Linear(D_in, D_out).cuda()
@@ -36,11 +38,10 @@ for t in range(niter):
     optimizer.step()
 toc = time.perf_counter()
 results_list.append(toc-tic)
-results_names.append("Full precision")
+results_names.append("Float32")
 print("Full precision: %0.2f seconds" % (toc-tic))
 
 # Training with AMP
-N, D_in, D_out = 64, 1024, 512
 x = torch.randn(N, D_in, device="cuda")
 y = torch.randn(N, D_out, device="cuda")
 for opt_level in ["O0", "O1", "O2", "O3"]:
@@ -71,6 +72,6 @@ for opt_level in ["O0", "O1", "O2", "O3"]:
     results_names.append("AMP " + opt_level)
     print("AMP (opt level %s): %0.2f seconds" % (opt_level, toc-tic))
 
-print("Results summary (%d iterations)\n===============" % niter)
+print("\nResults summary (%d iterations)\n===============" % niter)
 for name, result in zip(results_names, results_list):
-    print("%s: %0.2f seconds" % (name, result))
+    print("%s: %0.2f seconds  (%0.2fx full precision speed)" % (name, result, results_list[0]/result))

@@ -47,15 +47,14 @@ If the device doesn't have access to the repository, you'll need to clone it on 
 	You should see a prompt similar to the following:
 	
 	```bash
-	Results summary (500 iterations)
+	Results summary (100 iterations)
 	===============
-	Full precision: 0.90 seconds
-	AMP O0: 1.01 seconds
-	AMP O1: 2.23 seconds
-	AMP O2: 1.93 seconds
-	AMP O3: 1.46 seconds
+	Float32: 5.43 seconds  (1.00x full precision speed)
+	AMP O0: 5.50 seconds  (0.99x full precision speed)
+	AMP O1: 2.61 seconds  (2.08x full precision speed)
+	AMP O2: 2.15 seconds  (2.53x full precision speed)
+	AMP O3: 1.15 seconds  (4.73x full precision speed)
 	```
-	<I> Note: these results indicate that the mixed precision performance is worse than the full precision performance. This suggests that something's wrong. Currently troubleshooting this. </I>
 
 	## Variation: using the Jupyter notebook
 The instructions for using the Jupyter notebook are the same as above up to step 2. 
@@ -83,6 +82,26 @@ The instructions for using the Jupyter notebook are the same as above up to step
 	- If prompted for a password, enter `nvidia`
 
 5. In the browser window, open the file `simple_tensorcore_benchmark_jetson.ipynb` to view and run the code. 
+
+# Expected Performance
+
+## Jetson AGX Xavier (Python-only `apex` build)
+| Precision| Execution time (sec) | Speed-up |
+|:----------:|:----------------------:|:----------:|
+|   Float32 |        5.43        |   1.00   |
+|   AMP O0 |        5.50        |   0.99   |
+|   AMP O1 |        3.22        |   1.68   |
+|   AMP O2 |        2.89        |   1.88   |
+|   AMP O3 |        1.16        |   4.69   |
+
+## Jetson AGX Xavier (Full `apex` build)
+| Precision| Execution time (sec) | Speed-up |
+|:----------:|:----------------------:|:----------:|
+|   Float32 |        5.43        |   1.00   |
+|   AMP O0 |        5.50        |   0.99   |
+|   AMP O1 |        2.61        |   2.08   |
+|   AMP O2 |        2.16        |   2.52   |
+|   AMP O3 |        1.15        |   4.72   |
 
 # Troubleshooting
 ## Can't upgrade Docker or pull the Docker image
