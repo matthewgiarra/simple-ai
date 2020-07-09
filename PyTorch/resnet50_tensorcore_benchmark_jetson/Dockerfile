@@ -4,6 +4,9 @@
 # Nvidia machine learning image for Jetson
 FROM nvcr.io/nvidia/l4t-ml:r32.4.2-py3
 
+# Uncomment below (and comment above) to build for normal machine (i.e., not a Jetson)
+# FROM nvcr.io/nvidia/pytorch:19.06-py3
+
 RUN pip3 install --upgrade --no-cache-dir pip
 
 # Clone and install apex
