@@ -12,5 +12,4 @@ Navigate to the subdirectory of the example that you want to explore. Each subdi
 - `ruh.sh`, which launches a Docker container and runs the `.py` file
 
 # Philosophy
-Many online [examples](https://github.com/NVIDIA/DeepLearningExamples/) include custom functions to load their datasets, launch processes, calculate performance benchmarks, and so on.
-This often obfuscates parts of the code that would otherwise help you understand how to implement the functionality in your own projects.  
+Many online [examples](https://github.com/NVIDIA/DeepLearningExamples/) include custom functions to load their datasets, launch processes, calculate performance benchmarks, and so on. This can be helpful for creating clean, compact-looking code, but often obfuscates the sections of code that would otherwise help you understand how to implement their functionality in your own projects. Instead, the codes in this repository are written to maximize transparency at the expense of compactness. Our codes may be a bit longer, but you should be able to easily read through the steps, and understand the relationships between them, without having to dig through multiple packages. 
