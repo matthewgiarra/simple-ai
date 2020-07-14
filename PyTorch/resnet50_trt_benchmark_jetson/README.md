@@ -96,9 +96,11 @@ sudo apt-get --only-upgrade install docker.io
 - Power mode: [MAXN](https://www.jetsonhacks.com/2018/10/07/nvpmodel-nvidia-jetson-agx-xavier-developer-kit/) (`$ sudo nvpmodel -m 0`) 
 - Docker source image: `nvcr.io/nvidia/l4t-ml:r32.4.3-py3`  ([link](https://ngc.nvidia.com/catalog/containers/nvidia:l4t-ml))
 - NVIDIA `torch2trt` for converting PyTorch models to TensorRT ([link](https://github.com/NVIDIA-AI-IOT/torch2trt))
+- Model: `torchvision.models.resnet50()`
+- Images: 224x224 pixel RGB
 
 ### Results
-| Model| Execution time (sec) | Throughput (FPS) | Speed-up (vs. PyTorch FP32) |
+| Framework | Execution time (sec) | Throughput (FPS) | Speed-up (vs. PyTorch FP32) |
 |:----------:|:----------------------:|:----------:|:--------:|
 |   PyTorch  (FP32) |        13.06        |   38   |     1.00 |
 |   PyTorch  (FP16) |        7.16        |   69   |     1.82 |
