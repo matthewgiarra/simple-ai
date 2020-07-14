@@ -100,12 +100,12 @@ sudo apt-get --only-upgrade install docker.io
 - Images: 224x224 pixel RGB
 
 ### Results
-| Framework | Execution time (sec) | Throughput (FPS) | Speed-up (vs. PyTorch FP32) |
-|:----------:|:----------------------:|:----------:|:--------:|
-|   PyTorch  (FP32) |        13.06        |   38   |     1.00 |
-|   PyTorch  (FP16) |        7.16        |   69   |     1.82 |
-|   TensorRT (FP32) |        4.24        |   117   |     3.08 |
-|   TensorRT (FP16) |        1.46        |   342   |     8.95 |
+| Framework | Precision |  Execution time (sec) | Throughput (FPS) | Speed-up (vs. PyTorch FP32) |
+|:----------:|:-------:|:-------------------:|:----------:|:--------:|
+|   PyTorch  |  `Float32`|      13.06        |   38   |     1.00 |
+|   PyTorch   |  `Float16`|      7.16        |   69   |     1.82 |
+|   TensorRT |  `Float32`|      4.24        |   117   |     3.08 |
+|   TensorRT |  `Float16`|      1.46        |   342   |     8.95 |
 
 ## Comparison with published results
 Our results indicate that inference using `Float16` precision on Resnet50 yields about a 2x speedup compared to inference using `Float32` precision in PyTorch. Moreover, converting the model to TensorRT results in speed-ups of 3x and 9x for `Float32` and `Float16`, respectively, compared to `Float32` in PyTorch. This is significant, but still falls far short of the results posted on the [NVIDIA Developer Blog](https://developer.nvidia.com/blog/jetson-xavier-nx-the-worlds-smallest-ai-supercomputer/) (shown below), which are over 5x faster than our best performance here (1941 FPS vs. our 342 FPS for 224x224 images).  
