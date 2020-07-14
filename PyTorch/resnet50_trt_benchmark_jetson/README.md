@@ -110,7 +110,7 @@ sudo apt-get --only-upgrade install docker.io
 ## Comparison with published results
 Our results indicate that inference using `Float16` precision on Resnet50 yields about a 2x speedup compared to inference using `Float32` precision in PyTorch. Moreover, converting the model to TensorRT results in speed-ups of 3x and 9x for `Float32` and `Float16`, respectively, compared to `Float32` in PyTorch. This is significant, but still falls far short of the results posted on the [NVIDIA Developer Blog](https://developer.nvidia.com/blog/jetson-xavier-nx-the-worlds-smallest-ai-supercomputer/) (shown below), which are over 5x faster than our best performance here (1941 FPS vs. our 342 FPS for 224x224 images).  
 
-NVIDIA's results use `int8` precision for inference versus `FP16` used by our fastest model. This discrepancy probably accounts for a large fraction of the difference in performance. I need to read more to figure out how to convert models to `int8`.
+NVIDIA's results use `int8` precision for inference versus `Float16` used by our fastest model. This discrepancy probably accounts for a large fraction of the difference in performance. I need to read more to figure out how to convert models to `int8`.
 
 ![Image](https://developer.download.nvidia.com/devblogs/inferencing-performance.png)
 
