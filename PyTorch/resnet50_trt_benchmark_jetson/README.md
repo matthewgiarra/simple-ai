@@ -97,9 +97,9 @@ sudo apt-get --only-upgrade install docker.io
 - Docker source image: `nvcr.io/nvidia/l4t-ml:r32.4.3-py3`  ([link](https://ngc.nvidia.com/catalog/containers/nvidia:l4t-ml))
 - NVIDIA `torch2trt` for converting PyTorch models to TensorRT ([link](https://github.com/NVIDIA-AI-IOT/torch2trt))
 - Model: `torchvision.models.resnet50()`
-- Images: 224x224 pixel RGB
+- Images: 224x224 pixel RGB (500 images, batch size 1)
 
-### Results
+### Results: 500 images, batch size 1
 | Framework | Precision |  Execution time (sec) | Throughput (FPS) | Speed-up (vs. PyTorch FP32) |
 |:----------:|:-------:|:-------------------:|:----------:|:--------:|
 |   PyTorch  |  `Float32`|      13.06        |   38   |     1.00 |
