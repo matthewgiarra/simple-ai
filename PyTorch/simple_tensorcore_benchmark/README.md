@@ -25,7 +25,7 @@ sudo apt-get --only-upgrade install docker.io
 1. Clone this repository
  
 	```bash
-	git clone git@gitlab.jhuapl.edu:giarrmn1/simpleai.git
+	git clone http://github.com/matthewgiarra/simple-ai
 	```
 	
 2. Build the docker image

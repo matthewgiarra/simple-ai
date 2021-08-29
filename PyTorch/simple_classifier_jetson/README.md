@@ -21,13 +21,13 @@ sudo apt-get --only-upgrade install docker.io
 # Instructions
 
 1. Clone this repository
-
+ 
 	```bash
-	git clone git@gitlab.jhuapl.edu:giarrmn1/simpleai.git
+	git clone http://github.com/matthewgiarra/simple-ai
 	```
-	
-	If the device doesn't have access to the repository, you'll need to clone it on a machine that does have access and then copy it to the Jetson (e.g., using `scp`).
-	
+
+If the device doesn't have access to the repository, you'll need to clone it on a machine that does have access and then copy it to the Jetson (e.g., using `scp`).
+
 2. Build the docker image
 
 	```bash
